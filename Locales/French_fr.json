@@ -34,6 +34,18 @@
 	"KDR"         			:"V/M",
 	"Spectators:" 			:"Spectateurs:",
 	"and more ..."			:"et plus...",
+	
+//TeamMenu.as
+	"Spectator":"Spectateur",
+	"Auto-pick teams":"Séléction d'équipes automatique",
+	"Change team":  "Changé d'équipe",
+
+//ShowGameMode.as //You can translate here any game mode names
+	"  Gamemode: {GAMEMODE}":"  Mode de jeu: {GAMEMODE}",
+	"\n  Server: {SERVERNAME}\n":"\n  Serveur: {SERVERNAME}\n",
+	//"CTF":"CTF", //already exists in GAMEMODE INFO
+	//"TTH":"TTH", //Already exists in GAMEMODE INFO
+	"TDM":"TDM",
 
 //BuilderInventory.as
 	"Stop building\n": "Arrêter de construire\n",
@@ -252,16 +264,6 @@
 	"This is a sandbox mode in which\n you are free to relax.\n\nPress ESC to see controls.\nHave Fun!":"C'est un mode de bac à sable dans lequel\nvous pouvez faire ce que vous voulez.\n\nAppuyez sur ESC pour voir les contrôles.\nAmusez-vous bien!",
 //Sandbox gamemode.cfg
 	"Build whatever your heart desires. Respect other folk's creations!":"Construisez ce que vous voulez. Respectez les créations de vos camarades!",
-
-//// VOTES ////
-//VoteCore.as
-	"Reason: {REASON}"            :"Raison: {REASON}",
-	"Cast by: {USER}"             :"Voté par: {USER}",
-	"[O] - Yes"                   :"[O] - Oui",
-	"[P] - No"                    :"[P] - Non",
-	"Ctrl+O Pass"                 :"Ctrl+O Forcer oui",
-	"CTRL+P Cancel"               :"Ctrl+P Forcer non",
-	"Click to close ({TIMELEFT}s)":"Cliquer pour fermer ({TIMELEFT}s)",
 
 //TDM_Interface.as
 	"WARMUP"                                   :"ÉCHAUFFEMENT",
@@ -692,19 +694,369 @@
 	"Storage":"Entrepôt",
 
 //// BUTTONS AND OTHER ////
-	"Buy":"Acheter", //CTF Shops
-	"Shop":"Magasin", //Shop.as (menu desc) & TradingMenu.as (btn)
-	"Swap Class":"Changer de classe", //OneClassAvailable.as & TentLogic.as (btns)
-	"Swap class":"Changer de classe", //StandardRespawnCommand.as (menu desc)
-	"Change class":"Changer de classe", //Hall.as, TDM_Ruins.as, WAR_base.as, Ballista.as, WarBoat.as
-	"Trade":"Commercer",
+	"Builder":	  "Constructeur",
+	"Knight":	  "Chevalier",
+	"Archer":	  "Archer",
+	"Buy":		  "Acheter", 		//CTF Shops
+	"Construct":	  "Construire",		//Building.as
+	"Buy":            "Acheter",  //CTF Shops
+	"Shop":           "Magasin", //Shop.as (menu desc) & TradingMenu.as (btn)
+	"Rest":	          "Отдохнуть",		//Quarters.as (btn)
+	"Add fuel":	  "Добавить топливо",	//Quarry.as (btn)
+	"Research":	  "Исследования",
+	"Immobilise":	  "Desserrer les roues",  //PopWheelsOff.as (btn)
+	"Detach {ITEM}":  "Détacher {ITEM}",	//VehicleAttachment.as (btn)
+	"Load {ITEM}":    "Charger {ITEM}",	//VehicleCommon.as (btn)
+	"Swap Class":     "Changer de classe", //OneClassAvailable.as & TentLogic.as (btns)
+	"Swap class":     "Changer de classe", //StandardRespawnCommand.as (menu desc)
+	"Change class":   "Changer de classe", //Hall.as, TDM_Ruins.as, WAR_base.as, Ballista.as, WarBoat.as
+	"Trade":	  "Commercer",
+	"Build":	  "Construire",	//BuilderInventory.as
+	"Current bomb":   "Bombe sélectionnée",	//KnightLogic.as	
+//Components
+	"Unload":"Décharge", //Magazine.as (btn)
+	"Insert 60 coins":"Insérer 60 pièces", //CoinSlot.as (btn)
+	"Activate":"Activer", //PushButton.as (btn)
+//ArcherLogic.as
+	"Current arrow":"Flèche sélectionnée",
+	"Regular arrows":"Flèche simple",
+	"Water arrows":"Flèche de l'eau",
+	"Fire arrows":"Flèche de feu",
+	"Bomb arrow":"Flèche éclatante",
 
+	
 //// SCROLLS ////
 //ScrollDrought.as
 	"Use this to dry up an orb of water.":"Faites s'évaporer une grande quantité d'eau.",
 	"Use this to turn all stone in the area into gold":"Transformez la pierre environnante en or.",
 	"Use this to make all visible enemies instantly turn into a pile of gibs.":"Faites imploser tous les ennemis aux alentours.",
+	
+//// TEAMS ////
+	"Blue Team": "Équipe bleue",
+	"Red Team": "Équipe rouge",
 
+//// CHAT EVENTS ////
+	"{PLAYER} is now spectating": "{PLAYER} vous regarde",
+	"{PLAYER} ({USERNAME}) is now spectating": "{PLAYER} ({USERNAME}) vous regarde",
+	"{PLAYER} has joined {TEAM}": "{PLAYER} a rejoint к \"{TEAM}\"",
+	"{PLAYER} ({USERNAME}) has joined {TEAM}": "{PLAYER} ({USERNAME}) a rejoint к:\"{TEAM}\"",
+	"{PLAYER} has switched teams": "{PLAYER} a changé d'équipe",
+	"{PLAYER} ({USERNAME}) has switched teams": "{PLAYER} ({USERNAME}) a changé d'équipe,
+	"{PLAYER} connected": "{PLAYER} se connecte",
+	"{USERNAME} left the game": "{USERNAME} a quité le jeu",
+	"New player joined the game": "Nouveau joueur a rejoint le jeu",
+	"{USERNAME} connected as {PLAYER}": "{USERNAME} est connecter en tant que {PLAYER}",
+	"{USERNAME} is now known as {PLAYER}": "{USERNAME} est connue sous le nom de {PLAYER}",
+	"Map: {MAP}": "Carte: \"{MAP}\"",
+
+//// SERVER CONNECTION EVENTS ////
+	"Connecting to {SERVER}...": "Connection à {SERVER}...",
+	"Connecting to {IP}": "Connection à {IP}",
+	"Connection failed": "Connection échouer",
+	"Please check the address again and make sure the server is running.": "Veuillez vérifier à nouveau l'adresse et assurez-vous que le serveur est en cours d'exécution.",
+	"DISCONNECTED FROM SERVER": "DECONNECTER DU SERVEUR",
+
+////GLOBAL MESSAGES////
+	"Waiting for a hall capture before starting the game...":"Ожидание захвата базы для начала игры...",
+	"Match starts in {SEC}": "Match commence dans {SEC}",
+	"Starting in... {SEC}s": "Commence dans... {SEC}s",
+	"It's a tie!":"égalité!",
+	"Well done. Loading next map...":"Bien jouer. Chargement de la prochaine carte...",
+	"You saved the princess!":"Vous avez sauver la princesse!",
+	"The princess died!":"La princesse est morte!",
+	"Not enough players in each team for the game to start.\nPlease wait for someone to join...":"Pas assez de joueurs dans chaque équipe pour commencer le jeu.\nVeuillez attendre que quelqu'un se joigne...",
+	"{LOSING_TEAM} Surrendered! {WINNING_TEAM} wins the Game!":"{LOSING_TEAM} abandonné! {WINNING_TEAM} a gagner!",
+	"{WINNING_TEAM} wins the game!":"{WINNING_TEAM} a gagner!",
+	"Stalemate: both teams have no uncaptured flags.\nFlags returning in: {TIME}":"impasse: les deux équipes n'ont pas de drapeaux non capturés.\nLes drapeaux retournent dans {TIME}",
+	"Stalemate resolved: Flags returned.":"Impass resolue: Les drapeaux sont de retours.",
+
+//TimeToEnd.as
+	"Time is up!\n{WINNING_TEAM} wins the game!":"temp écoulé!\n{WINNING_TEAM} a gagner!",
+	"Time is up!\nIt's a tie!"          :"temp écoulé!\Égalité!",
+	"Time left: {MIN}:{SEC}"            :"Temps restant: {MIN}:{SEC}",
+
+//Challenges
+	"Kill the Red Scum!":"Tuez toutes les ordures Rouges!",
+	"Kill all the Campers":"Tuez tout les Campeurs",
+	"Kill all the Campers!":"Tuez tout les Campeurs!",
+	"Reach the end before time runs out!":"Parcourez la carte le plus rapidement possible!",
+	"Run away from the tidal wave!":"Fuir le raz de marée!",
+	"Get to the far right!":"Aller à l'extrême droite!",
+	"Find the longboat!":"Trouver la chaloupe!",
+	"Get to the top right of the castle!":"Allez au sommet du château!",
+	"Take the red hall!":"Prendre la hall rouge!",
+	"Time passed!":"Temps écoulé!",
+	"Round lost!":"Match perdu!",
+
+	"Kill'em All!":"tue-les tous!",
+	"Kill the Necromancer":"Tuez le nécromancien!",
+	"Parkour":"Parkour",
+	"Save the Princess!":"Sauvez la princesse!",
+	"Save the Princess":"Sauvez la princesse",
+	"Take the Hall":"Capturer le hall",
+
+////GAMEMODE INFO////
+	"All Gamemodes":"Tous les modes de jeu",
+	"Challenges":"Challenges",
+	"Capture the Flag":"Capturer le drapeaux",
+	"CTF":"CTF",
+	"Team Deathmatch":"Match à mort en équipe",
+	"Take the Halls":"Capturer les halls",
+	"TTH":"TTH",
+	"Challenge":"Challenge",
+	"Build whatever your heart desires. Respect other folk's creations!":"Construisez tout ce que votre coeur désire. Respectez les créations des autres peuples!",
+
+//// IRRLICHT GUI ////
+//guiConnect.xml
+	"IP:Port":"IP:Port:",
+	"Password:":"Mot de passe:",
+//guiHeadsPack.xml
+	"Heads Pack Available On Steam!":"Pack de têtes disponibles sur Steam!",
+	"Get exclusive cosmetic heads to increase your customisation options, and stand out on the battlefield!\n\nCurrently only available through steam as a DLC. If there's enough interest we can investigate non-steam options.\n\nProceeds go to continued development of King Arthur's Gold.":
+	"Obtenez des têtes cosmétiques exclusives pour augmenter vos options de personnalisation, et démarquez-vous sur le champ de bataille!\n\nActuellement disponible uniquement sur steam en tant que DLC. Si vous êtes intéressé, nous pouvons étudier pour faire une options sans steam.\n\nLes fonds iront au développement de King Arthur's Gold.",
+	"Find Out More!":"En savoir plus!",
+	"Close":"Fermer",
+//guiLogin.xml
+	"Username:":"Pseudonyme:",
+	"Remember me":"Se souvenir de moi"
+	"Create Account":"Créer un compte",
+	"Offline":"Hors ligne",
+	"Forgot?":"Oublier?",
+	"PLAY":"JOUER",
+//guiMain.xml
+	"Solo":"Solo",
+	"Multiplayer":"Multijoueur",
+	"Settings":"Options",
+	"How to video":"Video tutoriel",
+	"Forum":"Forum",
+	"News":"Info",
+	"Discord":"Discord",
+	"IRC":"IRC",
+	"Wiki":"Wiki",
+	"Set account e-mail":"Définir l'adresse e-mail du compte",
+	"Quit":"Quitter",
+	"Your KAG account e-mail and password":"Votre compte KAG e-mail et mot de passe",
+	"You can use these credentials to login on kag2d.com and kagforums.com":"Vous pouvez utiliser ces informations pour vous connecter sur kag2d.com et kagforums.com.",
+	"E-mail:":"E-mail",
+	"Submit":"Soumettre",
+//guiMulti.xml
+	"Simple Join":"Rejoindre simplement",
+	"Browse servers":"Rechercher des serveurs",
+	"Connect to...":"Se connecter à...",
+//guiPopup.xml
+	"New Game From THD:":"Nouveau jeu de THD",
+//guiQuickjoin.xml
+	"Pick Game Size:":"Sélectionnez le nombre de joueurs sur le serveur",
+	"<8 Players":"<8 Joueurs",
+	"8-20 Players":"8-20 Joueurs",
+	">20 Players":">20 Joueurs",
+	"Don't Care":"s'en fout",
+	"Choose Game Mode:":"Choisissez le mode de jeu",
+	//"Capture The Flag":"Capturer Le Drapeau", //Already exists in GAMEMODE INFO
+	//"Take The Halls":"Capturer Les Halls",  //Already exists in GAMEMODE INFO
+	//"Team Deathmatch":"Match à mort par équipe", //Already exists in GAMEMODE INFO
+	"Sandbox":"Bac à Sable",
+	"Co-op Challenge":"Challenge Co-op",
+	"Custom Content":"Contenu personnalisé",
+	"Play!":"Jouer!",
+//guiSettings.xml
+	"Controls"                  :"Contrôles",
+	"Video"                     :"Video",
+	"Sound"                     :"Son",
+	"Misc"                      :"Autres",
+	"Clantag:"                  :"Tag de clan:",
+	"Gender:"                   :"Sexe:",
+	"Male"                      :"Male",
+	"Female"                    :"Femelle",
+	"BUY {HEADS_PACK}"          :"ACHETER {HEADS_PACK}",
+	"Standard"                  :"Standard",
+	"Flags of The World"        :"Drapeaux Du Monde",
+	"Head packs:"               :"Pack de tête:",
+	"Head:"                     :"Tête:",
+	"Change keys:"              :"Changer une touche:",
+	"Smooth shader"             :"Shader lisse",
+	"Faster graphics"           :"Graphiques rapides",
+	"Uncap framerate"           :"Débloquer les FPS",
+	"VSync - Requires Restart"  :"VSync - Nécessite Un Redémarrage",
+	"Game music"                :"Musique du jeu",
+	"Sound Volume:"             :"Volume Du Son:",
+	"Music Volume:"             :"Volume De La Musique:",
+	"Volume:"                   :"Volume:",
+	"Menu music"                :"Musique du menu",
+	"Swap audio channels"       :"Permuter les canaux audio",
+	"Language (EXPERIMENTAL):"  :"Langue (EXPÉRIMENTAL)",
+	"Fixed camera"              :"Camera fixer",
+	"Kids safe"                 :"Sécuriter enfants",
+	"Chat Filter"               :"Filtre De Tchat",
+	"Show Team-Mates Names"     :"Afficher Les Noms Des Coéquipiers",
+	"Show Minimap"              :"Afficher La Minimap",
+	"Show Chat Bubbles"         :"Afficher Les Bulles De Tchat",
+	"Snap Camera To Pixel"      :"Aligner la caméra aux pixels",
+//guiSocial.xml
+	"KAG World":"KAG World",
+//guiSolo.xml
+	"(start here)":"(Commencer à partir d'ici)",
+	"TUTORIALS":"TUTORIELS",
+	//"Save the Princess":"Sauvez la princesse", //Already exists in GAMEMODE INFO
+	"Challenges!":"Challenges!",
+	"Tutorials":"Tutoriels",
+	"Basics":"Les bases",
+	//"Capture the Flag":"Capturer Le Drapeau",  //Already exists in GAMEMODE INFO
+	//"Take the Halls":"Capturer Les Halls", //Already exists in GAMEMODE INFO
+//guiStarter.xml
+	"King Arthur's Gold":"King Arthur's Gold",
+	"KAG Community":"Communauté KAG",
+	"Setup":"Configuration",
+	"Forums":"Forums",
+	"Blog":"Blog",
+	"Report Bugs":"Signaler un bug",
+	"Quick Setup":"Configuration rapide",
+	"Fullscreen (can cause visual issues)":"Plein écran (peut causer des problèmes visuels)",
+	"Window size":"Taille de la fenêtre	",
+	"Manual Resolution Entry - Hit Enter when done. Use at own risk!":"Saisie manuelle de la résolution - Appuyez sur Entrée lorsque vous avez terminé. Utilisez à vos risques et périls!",
+//guiSteam.xml
+	"First time launching from Steam":"Premier lancement via Steam",
+	"Link to existing account (recommended)":"Lien vers un compte existant (recommandé)",
+	"I'm new.":"Je suis nouveau.",
+	"PLAY as":"JOUER en tant que",
+	"I want to change my name":"Je veux changer de nom",
+	"and gain access to KAG forums":"et accéder aux forums KAG",
+	"Details of KAG account":"Détails du compte KAG,
+//guiTerms.xml
+	"Terms of Use":"Conditions d'utilisation",
+	"asdasd":"asdasd",
+	"Agreements":"Accords",
+	"I agree":"j'accepte",
+	"I agree to these terms of use":"J'accepte les conditions d'utilisation",
+
+//Server Browser + guiBrowser.xml
+	"Server Browser":                                "Server Browser",
+	"{SERVERS} servers with {PLAYERS} players":      "{SERVERS} serveurs avec {PLAYERS} joueurs",
+	"Play":                                          "Jouer",
+	"Spectate":                                      "Regarder",
+	"OK":                                            "OK",
+	"Beginner":                                      "Débutant",
+	//"Ping":                                          "Ping", //Already exists in ScoreboardRender.as
+	"Player Count":                                  "Nombre De Joueurs",
+	"Map Size":                                      "Taille De La Carte",
+	"Game Mode":                                     "Mode De Jeu",
+	"Server Name":                                   "Nom Du Serveur",
+	"Favorites Only":                                "Favori Seulement",
+	"Enter server password":                         "Entrez le mot de passe du serveur",
+	"Password":                                      "Mot de passe",
+	"Modded":                                        "Moddé",
+	"Refresh":                                       "Rafraîchir",
+	"Players (%):":                                  "Joueurs (%):",
+	"Game Mode:":                                    "Mode De Jeu:",
+	"Instant Search...":                             "Recherche Rapide...",
+	"Players: {CURRENT} / {MAXIMUM}":                "Joueurs: {CURRENT} / {MAXIMUM}",
+	"Players: {CURRENT} / {MAXIMUM} (FULL)":         "Joueurs: {CURRENT} / {MAXIMUM} (FULL)",
+	"Spectator Slots: {CURRENT} / {MAXIMUM}":        "Emplacement De Spectateur: {CURRENT} / {MAXIMUM}",
+	"Spectator Slots: {CURRENT} / {MAXIMUM} (FULL)": "Emplacement De Spectateur: {CURRENT} / {MAXIMUM} (FULL)",
+	"Spectators: {COUNT}":                           "Spectateurs: {COUNT}",
+	"Map size: {DIMENSIONS} ({SIZE})":               "Taille de la carte: {DIMENSIONS} ({SIZE})",
+	"SMALL":                                         "PETIT",
+	"MEDIUM":                                        "MOYEN",
+	"LARGE":                                         "GRAND",
+	"Ping: (Not Responding)":                        "Ping: (Ne Répond Pas)",
+	"Ping: {TIME}ms ({DESCRIPTION})":                "Ping: {TIME}ms ({DESCRIPTION})",
+	"GREAT":                                         "BIEN",
+	"OKAY":                                          "OKAY",
+	"LAGGY":                                         "ПЛОХОЙ",
+	"BAD":                                           "NUL",
+	"Reserved Slots: (NONE)":                        "Emplacements réservés: (AUCUN)",
+	"Reserved Slots: (FULL)":                        "Emplacements réservés: (PLEIN)",
+	"Reserved Slots: {CURRENT} / {MAXIMUM}":         "Emplacements réservés: {CURRENT} / {MAXIMUM}",
+	"GAME NOT STARTED":                              "LE MATCH N'A PAS ENCORE COMMENCER",
+	"BUILDING TIME":                                 "TEMPS DE CONSTRUCTION",
+	"GAME IN PROGRESS":                              "MATCH EN PROGRESSION",
+	//quick join fail notice
+	"No appropriate game found, sorry!":             "Aucun jeu approprié trouvé, désolé!",
+	"No active, low ping game was found meeting your criteria.\nTry Adjusting the criteria, or pick a game manually through the server browser.\n\nGames with more players will usually be up the top of the browser.\n\nIf you can't find any servers, please check your internet connection!":
+	"Aucun jeu de ping bas actif correspondant à vos critères n'a été trouvé.\nEssayez de définir des critères ou de sélectionner manuellement un jeu via le navigateur du serveur.\n\Les jeux avec un grand nombre de joueurs seront généralement en haut du navigateur.\n\nSi vous ne trouvez aucun serveur, vérifiez votre connexion Internet!",
+	//server browser main help text
+	"YELLOW = official server": "JAUNE = serveur officiel",
+	"WHITE = vanilla server":   "BLANC = serveur normal",
+	"BLUE = modded server":     "BLEU = serveur moddé",
+	"Instant Search: searches for servers containing the query in the server name, description, game mode, IP address, or any player on the server (exact match only for players).":
+	"Recherche instantanée: recherche les serveurs contenant la requête dans le nom du serveur, la description, le mode de jeu, l'adresse IP ou tout autre joueur du serveur (correspondance exacte uniquement pour les joueurs).",
+	"e.g. entering 'Shadlington' will find any servers that Shadlington is playing on, or that have 'Shadlington' in the name/description.":
+	"par exemple. En entrant dans 'Shadlington', vous trouverez tous les serveurs sur lesquels Shadlington est en train de jouer ou dont le nom / la description est 'Shadlington'.",
+	"Players (%) slider: Use this to set the min and max percent full you want servers to be.":
+	"Curseur Joueurs (%): utilisez-le pour définir les pourcentages minimum et maximum de remplissage des serveurs.",
+	"e.g. set it to 1% min and 99% max to find servers that are not empty and not full, or set it to 50% to 100% to find servers that are 'at least half full'.":
+	"par exemple. réglez-le sur 1% minimum et sur 99% maximum pour trouver des serveurs qui ne sont ni vides ni pleins, ou définissez-le sur 50% à 100% pour trouver des serveurs «au moins à moitié pleins».",
+	"Map Preview can be dragged with the mouse.": "L'aperçu de la carte peut être déplacé avec la souris.",
+//// VOTES ////
+
+	//VoteCore.as
+	"Reason: {REASON}"            :"Raison: {REASON}",
+	"Cast by: {USER}"             :"Initiateur: {USER}",
+	"[O] - Yes"                   :"[O] - Oui",
+	"[P] - No"                    :"[P] - Non",
+	"Ctrl+O Pass"                 :"Ctrl+O Passer",
+	"Ctrl+P Cancel"               :"Ctrl+P Annuler",
+	"Click to close ({TIMELEFT}s)":"Cliquez pour fermer ({TIMELEFT}s)",
+
+	//
+	"Start a Vote":			"Commencer un vote",
+	"Can't Start Vote":			"Vous ne pouvez pas commencer un vote",
+	"(Vote already in progress)":"(Vote déjà en cours)",
+	//vote kick menu
+	"Kick {USER}?":"Exclure {USER}?",
+	"Kick":"Exclure",
+	"Vote Kick":				"Vote Pour Exclure",
+	"Griefer":				"Griefer",
+	"Hacker":					"Hacker",
+	"Teamkiller":				"Teamkiller",
+	"Chat Spam":				"Tchat Spam",
+	"Non-Participation":		"Non-participation au jeu",
+	"Voting requires a {REQUIRED_MIN} min wait\nafter each started vote to\nprevent spamming/abuse.\n":"Après chaque vote, il faut attendre {REQUIRED_MIN}min,\npour éviter le spam ou voter sans raison.",
+	"Vote to kick a player on your team\nout of the game.\n\n- use responsibly\n- report any abuse of this feature.\n\nTo Use:\n\n- select a reason from the\n     list (default is griefing).\n- select a name from the list.\n- everyone votes.\n":"Votez pour expulser un joueur de votre équipe.\n\n- utiliser de manière responsable\n- signaler tout abus de cette fonctionnalité.\n\Comment utiliser:\n\n- Choisissez une raison dans la liste\n     (grifership par défaut).\n- sélectionnez un nom dans la liste.\n- tout le monde vote.\n",
+	"Cannot kick {USER}":"Ne peut être exclu {USER}",
+	"You started a vote for\nthis person last time.\n\nSomeone else must start the vote.":"Vous avez commencé à voter pour cette personne la dernière fois.\n\nQuelqu'un d'autre doit commencer le vote.",
+	"Kick {USER}":"Exclu {USER}",
+	"Kicking {USER}":"Exclure {USER}",
+	"Make sure you're voting to kick\nthe person you meant.\n":"Assurez-vous d'exclure\nla personne que vous voulez.",
+	"Yes, I'm sure":"Oui, je suis sur",
+	"(No-one available)":"(Personne disponible)",
+	"Can't vote":"Vous ne pouvez pas voter",
+	"You are now allowed to votekick\nplayers on this server\n":"Vous avez maintenant le droit de voter pour l'exclusion des joueurs sur ce serveur.",
+	//vote map menu
+	"Next Map":"Carte suivante",
+	"Map Ruined":"Carte en ruine",
+	"Stalemate":"Impasse",
+	"Game Bugged":"Jeu buggé",
+	"Skip to next map?":"Passer à la carte suivante?",
+	"Voting for next map\nrequires a {NEXTMAP_MINS} min wait\nafter each started vote\nto prevent spamming.\n":"Voter pour changer de carte demande {NEXTMAP_MINS} min d'attente\pour eviter le spam.\n",
+	"Vote to change the map\nto the next in cycle.\n\n- report any abuse of this feature.\n\nTo Use:\n\n- select a reason from the list.\n- everyone votes.\n":"Votez pour changer la carte au prochain cycle. signaler tout abus de cette fonctionnalité. Pour utiliser: sélectionnez un motif dans la liste.",
+	"Vote Next Map":"Vote pour changement de carte",
+	"You are not allowed to vote\nto change the map on this server\n":"Vous n'êtes pas autorisé à voter pour un changement de carte sur ce serveur.",
+	//vote surrender menu
+	"Surrender":"Abandonner",
+	"Surrender to the enemy?":"Se rendre à l'ennemi?",
+	"Voting for surrender\nis not allowed before the game starts.\n":"Il est interdit d'abandonner avant le début de la partie.",
+	"Voting for surrender\nrequires a {NEXTMAP_MINS} min wait\nafter each started vote\nto prevent spamming.\n":"Après chaque vote, vous devez attendre {NEXTMAP_MINS}min pour éviter le spam.",
+	"Voting for surrender\nis not available as a spectator\n":"En tant que spectateur, vous ne pouvez pas abandonner.",
+	"Vote Surrender":"Voter Abandonner",
+	"Vote to end the game\nin favour of the enemy team.\n\n- report any abuse of this feature.\n\nTo Use:\n\n- select surrender if you're sure.\n- everyone votes.\n":"Votez le jeu en faveur de l'équipe adverse. /nsignaler tout abus de cette fonctionnalité. /nPour utiliser sélectionnez se rendre.\n",
+	"We Surrender! (I'm sure)":"Nous nous rendons! (Je suis sur)",
+	//vote chat messages
+	"Votekick passed! {USER} will be kicked out.":"Le vote a passer! {USER} vas être exclu du match.",
+	"{USER} left early, acting as if they were kicked.":"{USER} a quitter en avance, il va être compter comme exclu.",
+	"{USER} needs to take a spoonful of cement! Play on!":"{USER} devrait penser à votre décision. Le jeu continue!",
+	"--- A vote was started by {USER} ---":"--- Un vote a été lancé par {USER} ---",
+	"--- Vote \"{TITLE}\" was started by {USER}. Reason: {REASON} ---":"--- Vote \"{TITLE}\" a été commencer par {USER}. Raison: {REASON} ---",
+	"--- Vote {OUTCOME}: {YESCOUNT} vs {NOCOUNT} (out of {MAXVOTES}) ---":"--- Vote {OUTCOME}: {YESCOUNT} vs {NOCOUNT} (hors de {MAXVOTES}) ---",
+	"passed":"passé",
+	"failed":"échoué",
+	"--- Admin {USER} forced vote to pass ---":"--- Le vote a été réussi par décision administrative {USER} ---",
+	"--- Vote cancelled by admin {USER} ---":"--- Vote annulé par un administrateur {USER} ---",
+	"--- Vote cancelled ---":"--- Vote annulé ---",
+	"--- {USER} Voted {DECISION} ---":"--- {USER} Voté pour {DECISION} ---",
+	"In Favour":"En faveur",
+	"Against":"Contre",
+	
 //// UI ////
 	"OK": "OK",
 	"Cancel": "Annuler",
@@ -772,17 +1124,137 @@
 	
 	"Connect to...": "Connexion\nmanuelle",
 	"IP:Port": "IP:port",
-	//"Password:": "Mot de passe:", //already translated
+//"Password:": "Mot de passe:", //already translated
 	
-//ESC menu
-	"Change Team": "Changer d'équipe",
-	"Suicide": "Se suicider",
-	"Start a Vote": "Démarrer un vote",
-	"Admin": "Administration",
-	"Ignore Player": "Ignorer un joueur",
-	"Servers": "Liste des serveurs",
-	"Settings": "Paramètres",
-	"Quit to menu": "Retour au menu",
+//// ESC MENUS ////
+	"Back":					"Retour",
+	"Change Team":				"Changer d'équipe",
+	"Switch to Team {NUMBER}":		"Changer d'équipe {NUMBER}", //(not used in vanilla)
+	// "Spectator":				"Spectateur", //Already exists in TeamMenu.as
+	"Spectators":				"Spectateurs",
+	"Suicide":				"Suicide",
+	"Admin":				"Admin",
+	"Restart Map":				"Redémarrer la carte",
+	"Administrate Players":			"Administrer les joueurs",
+	"Ban":					"Ban",
+	"Ban - 10 mins":			"Ban - 10 mins",
+	"Ban - 1 hour":				"Ban - 1 heure",
+	"Ban - 1 day":				"Ban - 1 jour",
+	"Ban - Permanent":			"Ban - Permanent",
+	"Mute":					"Muet",
+	"Mute - 10 mins":			"Muet - 10 mins",
+	"Mute - 1 hour":			"Muet - 1 heure",
+	"Mute - 1 day":				"Muet - 1 jour",
+	"Mute - Permanent":			"Muet - Permanent",
+	"Unmute":				"désactiver la sourdine",
+	"Freeze":				"Gel",
+	"Unfreeze":				"dégeler",
+	"Swap Team":				"Changer d'équipe",	
+	"Assign Seclev":			"Assigner Seclev",
+	"Ignore Player":			"Ignorer le joueur",
+	"Ignore - 10 mins":			"Ignorer - 10 mins",
+	"Ignore - 1 hour":			"Ignorer - 1 heure",
+	"Ignore - 1 day":			"Ignorer - 1 jour",
+	"Ignore - Permanent":			"Ignorer - Permanent",
+	"Unignore":				"arrêter d'ignorer",
+	"Servers":				"Serveurs",
+	"Help":					"Aide",
+	"Manual":				"Manuel",
+	"Map Utilities":			"Utilitaires de carte",
+	"Map Filename":				"Nom de fichier de la carte",
+	"Save Map":				"Enregistrer la carte",
+	"Quit to Main Menu":			"Quitter au menu principal",
+	
+// EmoteMenu.as and WheelMenuCommon.as
+	"Select emote":"Sélectionnez une emote",
+	"(no selection)":"(pas de sélection)",
+	"Point right":"Montrer à droite",
+	"Laughing":"Riant",
+	"Smiling":"Souriant",
+	"Skull":"Crâne",
+	"Laughing Crying":"Pleurer de rire", //Истерический смех
+	"Awkward Laughing":"Rire maladroit",
+	"Smug":"Smug",
+	"Troll":"Troll",
+	"What":"Quoi?",
+	"Point down":"Montrer bas",
+	"Derp":"Derp", //Неудачно получилось
+	"Mad":"Furieux", //Злость
+	"Disappointed":"déçu",
+	"Frown":"Froncer les sourcils",
+	"Crying":"Pleurer",
+	//"Archer":"Archer",
+	//"Knight":"Chevalier",
+	//"Builder":"Constructeur",
+	"Point left":"Montrer à gauche",
+	//"Heart":"Cœur",
+	"Love":"Amour",
+	"Kiss":"Bisou",
+	"Flex":"Fléchir",
+	"Rude Gesture":"Geste grossier",
+	"Thumbs down":"Pouces vers le bas",
+	"Thumbs up":"Pouce en l'air",
+	//"OK":"OK",
+	"Point up":"Montrer",
+	"Thinking":"Pensant",
+	"Sweat drop":"Sueur",
+	//"Ladder":"Échelle",
+	"Attention":"Attention",
+	"Question":"Question",
+	"Fire":"feu",
+	"Wall":"Mur",
+	"Musical note":"Note de musique",
+
+// EmoteBinderMenu.as
+	"Bindings":"Changement De Touches",
+	"Bind Emotes":"Relier les émotes",
+	"Emote Hotkey Binder":"Relier les émotes au touches",
+	"Select a keybind below, then select the emote you want":"Sélectionnez la touche ci-dessous, puis sélectionnez l'émotion.",
+	"Select key {KEY_NUM}":"Choisir une touche {KEY_NUM}",
+
+// Accolades
+	"support tier: {SUPPORT_TIER}":"niveau de support: {SUPPORT_TIER}",
+	"New Player - Welcome them to the game!":"Новый игрок - поприветствуйте его!",
+	"This player has 1 to 2 weeks of experience":"Ce joueur a 1-2 semaines d'expérience dans le jeu.",
+	"This player has 2 to 3 weeks of experience":"Ce joueur a 2-3 semaines d'expérience dans le jeu.",
+	"This player has 3 to 4 weeks of experience":"Ce joueur a 3-4 semaines d'expérience dans le jeu.",
+	"This player has 1 to 2 months of experience":"Ce joueur a 1-2 mois d'expérience dans le jeu.",
+	"This player has 2 to 3 months of experience":"Ce joueur a 2-3 mois d'expérience dans le jeu.",
+	"This player has 3 to 6 months of experience":"Ce joueur a 3-6 mois d'expérience dans le jeu.",
+	"This player has 6 to 9 months of experience":"Ce joueur a 6-9 mois d'expérience dans le jeu.",
+	"This player has 9 to 12 months of experience":"Ce joueur a 9-12 mois d'expérience dans le jeu.",
+	"Cake Day - it's this player's KAG Birthday!":"Cake Day - ce joueur a son anniversaire aujourd'hui!",
+	"This player has 1 year of experience":"Ce joueur a 1 ans d'expérience dans le jeu.",
+	"This player has 2 years of experience":"Ce joueur a 2 ans d'expérience dans le jeu.",
+	"This player has 3 years of experience":"Ce joueur a 3 ans d'expérience dans le jeu.",
+	"This player has 4 years of experience":"Ce joueur a 4 ans d'expérience dans le jeu.",
+	"This player has 5 years of experience":"Ce joueur a 5 ans d'expérience dans le jeu.",
+	"This player has 6 years of experience":"Ce joueur a 6 ans d'expérience dans le jeu.",
+	"This player has 7 years of experience":"Ce joueur a 7 ans d'expérience dans le jeu.",
+	"This player has 8 years of experience":"Ce joueur a 8 ans d'expérience dans le jeu.",
+	"This player has 9 years of experience":"Ce joueur a 9 ans d'expérience dans le jeu.",
+	"This player has over a decade of experience":"Ce joueur a plus de 10 ans d'expérience dans le jeu.",
+//tourney
+	"Gold Medal - for Placing 1st in a Suitable Community Tournament":
+	"Gold Medal - pour la première place du tournoi",
+	"Silver Medal - for Placing 2nd in a Suitable Community Tournament":
+	"Médaille d'argent - pour la deuxième place du tournoi",
+	"Bronze Medal - for Placing 3rd in a Suitable Community Tournament":
+	"Médaille de bronze - pour la troisième place du tournoi",
+	"Participation Ribbon - for Participating in a Suitable Community Tournament":
+	"Ruban de participation - pour participer à un tournoi communautaire approprié",
+//misc
+	"Community Contributor - for significantly contributing to the KAG community in some way":
+	"Contribution à la communauté - pour une contribution significative à la communauté KAG",
+	"Github Contributor - for significantly contributing to an issue or pull request on the KAG GitHub":
+	"Contribuez au développement sur Github - pour des contributions importantes au référentiel KAG sur GitHub",
+	"Map Contributor - for contributing to the official map cycle":
+	"Contribution à la carte - pour avoir contribué au cycle de la carte officielle",
+	"Moderation Contributor - for contributing to moderating the game, forums, or discord":
+	"Contribution à la modération - pour avoir contribué à la modération d'un jeu, de forums ou d'un serveur Discord",
+
+//sound
+	"MigrantSayHello": "MigrantSayPrivet"
 	
 //Settings->Player
 	"Player": "Joueur",
